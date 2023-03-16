@@ -6,7 +6,7 @@
         v-for="task in tasks"
         :key="task.title"
         @click="task.done = !task.done"
-        :class="{ 'done bg-green-2': task.done }"
+        :class="{ 'done bg-orange-1': task.done }"
         clickable
       >
         <q-item-section avatar>
@@ -61,4 +61,3 @@ export default defineComponent({
   }
 }
 </style>
-<div class="q-item__label">poop</div>
