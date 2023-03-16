@@ -6,6 +6,7 @@
         v-for="task in tasks"
         :key="task.title"
         @click="task.done = !task.done"
+        :class="{ 'done bg-green-2': task.done }"
         clickable
       >
         <q-item-section avatar>
@@ -17,6 +18,9 @@
         </q-item-section>
         <q-item-section>
           <q-item-label>{{ task.title }}</q-item-label>
+        </q-item-section>
+        <q-item-section v-if="task.done" side>
+          <q-btn-flat round dense color="primary" icon="delete" />
         </q-item-section>
       </q-item>
     </q-list>
@@ -48,3 +52,13 @@ export default defineComponent({
   //  name: "IndexPage",
 });
 </script>
+
+<style lang="scss">
+.done {
+  q-item__label {
+    text-decoration: line-through;
+    color: #a90000;
+  }
+}
+</style>
+<div class="q-item__label">poop</div>
